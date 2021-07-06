@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: changqing
  * @Date: 2021-04-20 22:47:15
- * @LastEditTime: 2021-05-04 15:14:10
+ * @LastEditTime: 2021-07-06 14:31:27
  * @LastEditors: changqing
  * @Usage: 
  */
@@ -13,12 +13,12 @@ import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 export default {
-    input:'./src/main.js',//入口文件
+    input:'./src/index.js',//入口文件
     output:{
-        file:'./dist/bundle.js',//打包后的存放文件
+        file:'./dist/rollup_bundle.js',//打包后的存放文件
         format:'iife',//输出格式 amd es6 iife umd cjs
         name:'bundleName',//如果iife,umd需要指定一个全局变量
-        sourcemap:true,
+        //sourcemap:true,
         globals:{
             lodash:'_', //告诉rollup全局变量_即是lodash
             jquery:'$' //告诉rollup全局变量$即是jquery

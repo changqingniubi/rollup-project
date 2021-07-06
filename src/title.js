@@ -1,1 +1,1 @@
-export var age = '12'
+export const hello = 'hello';

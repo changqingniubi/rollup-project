@@ -1,51 +1,32 @@
 /*
  * @Description: 
  * @Author: changqing
- * @Date: 2021-04-20 22:47:15
- * @LastEditTime: 2021-05-03 22:08:51
+ * @Date: 2021-05-14 10:01:19
+ * @LastEditTime: 2021-07-05 16:48:49
  * @LastEditors: changqing
  * @Usage: 
  */
-
 let Scope = require('./scope');
-let a = 1;
+var a = 1;
 function one(){
-    let b = 2;
-    function two(age){
-        let c = 3;
-        console.log(a,b,c,age);
+    var b = 2;
+    function two(d){
+        var c = 3;
+        console.log(a,b,c,d);
     }
-    two();
+    two('d');
 }
 one();
-let globalScope = new Scope({
-    name:'globalScope',params:[],parent:null
-});
+let globalScope = new Scope({name:'globalScope'});
 globalScope.add('a');
-let oneScope = new Scope({
-    name:'oneScope',params:[],parent:globalScope
-});
+let oneScope = new Scope({name:'oneScope',parent:globalScope});
 oneScope.add('b');
-let twoScope = new Scope({
-    name:'twoScope',params:['age'],parent:oneScope
-});
+oneScope.add('two');
+let twoScope = new Scope({name:'twoScope',parent:oneScope,params:['d']});
 twoScope.add('c');
 
-let aScope =twoScope.findDefiningScope('a');
-console.log(aScope.name); //globalScope
+console.log(twoScope.findDefiningScope('a').name);
+console.log(twoScope.findDefiningScope('b').name);
+console.log(twoScope.findDefiningScope('c').name);
+console.log(twoScope.findDefiningScope('d').name);
 
-let bScope =twoScope.findDefiningScope('b');
-console.log(bScope.name);//oneScope
-
-
-let cScope =twoScope.findDefiningScope('c');
-console.log(cScope.name);//twoScope
-
-
-let ageScope =twoScope.findDefiningScope('age');
-console.log(ageScope.name);//twoScope
-
-let xxxScope =twoScope.findDefiningScope('xxx');
-console.log(xxxScope);//null
-
-//tree-shaking原理的核心就是基于这样的一个scope chain

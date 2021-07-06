@@ -1,6 +1,5 @@
-let b = 2;
-function one(){
-    var a = 1;
-    console.log(b);
-}
-console.log(a);
+
+let arr = [1,2];
+let items = [3,4];
+arr.push(...items);
+console.log(arr);

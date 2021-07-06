@@ -1,35 +1,19 @@
-(function () {
-    'use strict';
-
-    /*
-     * @Description: 
-     * @Author: changqing
-     * @Date: 2021-04-20 22:47:15
-     * @LastEditTime: 2021-05-03 20:08:30
-     * @LastEditors: changqing
-     * @Usage: 
-     */
-    // import {age} from './title';
-    // age++;
-    // export {
-    //     age
-    // };
-    var name = 'xiaoming';
-
-    /*
-     * @Description: 
-     * @Author: changqing
-     * @Date: 2021-04-20 22:47:15
-     * @LastEditTime: 2021-05-03 22:54:03
-     * @LastEditors: changqing
-     * @Usage: 
-     */
-
-    function say() {
-      console.log('hello', name);
-    }
-
-    say();
-
-}());
-//# sourceMappingURL=bundle.js.map
+let name = 'xiaoming';
+name+='hello';
+function say(){
+    console.log('hello',name);
+}
+say();
+const age = 11;
+const age1 = age + '1';
+const age$1 = 12;
+const age2 = age$1 + '2';
+const age$2 = 13;
+const age3 = age$2 + '3';
+console.log(age1,age2,age3);
+if(true){
+  var age4 = 12;
+}
+console.log(age4);
+var age5 = 12;
+console.log(age5);

@@ -1,21 +1,21 @@
-
 class Scope{
-  constructor(options = {}){
-    this.name = options.name;//作用域起个名字，没有什么用，只是帮助 大家认识的
-    this.parent = options.parent;//父作用域
-    this.names = options.params||[];//此作用内有哪些变量
-  }
-  add(name){
-    this.names.push(name);
-  }
-  findDefiningScope(name){
-    if(this.names.includes(name)){
-        return this;
+    constructor(options={}){
+        this.name = options.name;
+        this.parent = options.parent;//这个作用域的父作用域
+        this.names = options.params||[];//存放着这个作用域内的声明的变量
     }
-    if(this.parent){
-        return this.parent.findDefiningScope(name);
+    //向当前的作用域内添加变量
+    add(name){
+        this.names.push(name);
     }
-    return null;
-  }
+    //找到定义这个变量的作用域
+    findDefiningScope(name){
+        if(this.names.includes(name)){//先看看自己作用域内有没有这个变量
+            return this;
+        }else if(this.parent){//如果当前这个作用域有父作用域，那么交由它父作用域查找
+            return this.parent.findDefiningScope(name);
+        }
+        return null;
+    }
 }
 module.exports = Scope;

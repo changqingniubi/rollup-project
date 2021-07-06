@@ -1,10 +1,11 @@
 /*
  * @Description: 
  * @Author: changqing
- * @Date: 2021-04-20 22:47:15
- * @LastEditTime: 2021-05-04 16:20:51
+ * @Date: 2021-05-14 10:01:19
+ * @LastEditTime: 2021-07-06 11:09:55
  * @LastEditors: changqing
  * @Usage: 
  */
-export var name = 'xiaoming';
-export var age = 12;
+export let name = 'xiaoming';
+export let age = 12;
+name+='hello';
