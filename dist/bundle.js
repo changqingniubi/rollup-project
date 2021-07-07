@@ -7,9 +7,9 @@ say();
 const age = 11;
 const age1 = age + '1';
 const age$1 = 12;
-const age2 = age$1 + '2';
+const age2 = age + '2';
 const age$2 = 13;
-const age3 = age$2 + '3';
+const age3 = age + '3';
 console.log(age1,age2,age3);
 if(true){
   var age4 = 12;
