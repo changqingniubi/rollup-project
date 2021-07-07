@@ -697,7 +697,6 @@ const Bundle = require('./bundle');
  * @param {*} filename 文件名
  */
 function rollup(entry,filename){
-    debugger
     //根据entry创建bundle
    let bundle = new Bundle({entry});
    //编译入口文件，得到输出结果 写入文件里去
@@ -920,7 +919,6 @@ class Module{
    }
    //找到此变量的定义语句并包含进来
    define(name){
-     debugger
      //先判断这个变量是不是导入的变量
      //this.imports[localName]={source,name,localName};
     if(has(this.imports,name)){
