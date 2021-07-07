@@ -25,16 +25,18 @@
    * @Description: 
    * @Author: changqing
    * @Date: 2021-05-14 10:01:19
-   * @LastEditTime: 2021-07-07 11:36:14
+   * @LastEditTime: 2021-07-07 14:49:27
    * @LastEditors: changqing
    * @Usage: 
    */
+  var name2 = '1';
 
   function say() {
     console.log('hello', name);
   }
 
   say();
+  console.log('hello', name2);
   console.log(age1, age2, age3);
 
   {
@@ -43,6 +45,11 @@
 
   console.log(age4);
   var age5 = 12;
-  console.log(age5);
+  console.log(age5); // 输出
+  // hello xiaominghello
+  // hello 1
+  // 111 122 133
+  // 12
+  // 12
 
 }());
